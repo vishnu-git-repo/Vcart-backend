@@ -13,8 +13,8 @@ const getAllProducts = async(req,res)=>{
 }
 
 const createProduct = async(req,res)=>{
-    const {name,attributes,initial_price,fixed_price,seller,ratings} = req.body;
-    const img = req.file.filename
+    console.log("BODY---",req.body);
+    const {name,attributes,initial_price,fixed_price,seller,ratings,img} = req.body;
     const product = new PRODUCTS(
         {
             name,
@@ -30,6 +30,7 @@ const createProduct = async(req,res)=>{
     product.save()
     .then(()=>{
         console.log("product saved");
+        console.log(product);
         res.status(201).send("success");
     })
     .catch((e)=>{

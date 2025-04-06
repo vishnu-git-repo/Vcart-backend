@@ -11,7 +11,7 @@ app.use(cors());
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
-app.use("/uploads",express.static(path.join(__dirname,"public","uploads","product-img")))
+
 
 
 const productRoutes = require("./routes/product")

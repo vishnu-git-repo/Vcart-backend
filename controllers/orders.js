@@ -5,8 +5,8 @@ const USERS = require("../models/user")
 const createOrder = async (req, res) => {
     try {
         const Orders = new ORDERS({
-            status:"pending",
-            date:new Date().toLocaleString("en-us",{timeZone: "Asia/Kolkata"}),
+            status: "pending",
+            date: new Date(), // Store as a Date object in UTC
             user_id: req.body.user_id,
             products: req.body.products,
         });
